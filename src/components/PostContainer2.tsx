@@ -4,7 +4,7 @@ import { postAPI } from '../services/UserServices'
 import PostItem from './PostItem'
 
 const PostContainer2 = () => {
-    const { data: posts, isLoading, isError, refetch } = postAPI.useFetchAllPostsQuery(10)
+    const { data: posts, isLoading, isError, refetch } = postAPI.useFetchAllPostsQuery(100)
 
     return (
         <div>
@@ -12,9 +12,9 @@ const PostContainer2 = () => {
                 <button onClick={() => refetch()}>REFETCH</button>
                 {isLoading && <h1>Идет загрузка...</h1>}
                 {isError && <h1>Произошла ошибка загрузки постов...</h1>}
-                {posts && posts.map(post =>
+                {/* {posts && posts.map(post =>
                     <PostItem post={post} key={post.id} />
-                )}
+                )} */}
             </div>
         </div>
     )
